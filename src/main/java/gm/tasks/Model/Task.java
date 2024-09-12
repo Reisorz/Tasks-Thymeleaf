@@ -1,4 +1,4 @@
-package gm.Tasks.Model;
+package gm.tasks.Model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

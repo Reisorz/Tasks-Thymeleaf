@@ -1,7 +1,7 @@
-package gm.Tasks.Service;
+package gm.tasks.Service;
 
-import gm.Tasks.Model.Task;
-import gm.Tasks.Repository.TaskRepository;
+import gm.tasks.Model.Task;
+import gm.tasks.Repository.TaskRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,7 +14,7 @@ public class TaskService implements ITaskService{
     private TaskRepository taskRepository;
 
     @Override
-    public List<Task> listTasks() {
+    public List<gm.tasks.Model.Task> listTasks() {
         return taskRepository.findAll();
     }
 

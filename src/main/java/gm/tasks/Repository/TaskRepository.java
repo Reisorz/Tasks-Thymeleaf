@@ -1,6 +1,6 @@
-package gm.Tasks.Repository;
+package gm.tasks.Repository;
 
-import gm.Tasks.Model.Task;
+import gm.tasks.Model.Task;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;

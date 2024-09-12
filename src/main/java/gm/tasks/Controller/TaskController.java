@@ -1,0 +1,29 @@
+package gm.tasks.Controller;
+
+import gm.tasks.Model.Task;
+import gm.tasks.Service.TaskService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.GetMapping;
+import java.util.List;
+
+@Controller
+public class TaskController {
+
+    private static final Logger logger = LoggerFactory.getLogger(TaskController.class);
+
+    @Autowired
+    TaskService taskService;
+
+    @GetMapping("/")
+    public String initiate(ModelMap model) {
+        List<Task> tasks = taskService.listTasks();
+        tasks.forEach((task -> logger.info(task.toString())));
+        model.put("tasks", tasks);
+        return "index";
+    }
+
+}

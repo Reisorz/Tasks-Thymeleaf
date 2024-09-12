@@ -1,10 +1,11 @@
-package gm.Tasks.Service;
+package gm.tasks.Service;
 
-import gm.Tasks.Model.Task;
+import gm.tasks.Model.Task;
+
 import java.util.List;
 
 public interface ITaskService {
-    public List<Task> listTasks();
+    public List<gm.tasks.Model.Task> listTasks();
 
     public Task searchTaskById(Integer taskId);
 
