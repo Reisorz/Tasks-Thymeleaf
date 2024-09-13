@@ -19,6 +19,7 @@
                     <th scope="col">Task</th>
                     <th scope="col">Responsible person</th>
                     <th scope="col">Status</th>
+                    <th scope="col"></th>
                 </tr>
                 </thead>
                 <tbody>
@@ -27,6 +28,12 @@
                     <td th:text="${task.taskName}"></td>
                     <td th:text="${task.responsiblePerson}"></td>
                     <td th:text="${task.status}"></td>
+                    <td class="text-center">
+                        <div class="container">
+                            <a th:href="@{/edit/{id}(id=${task.taskId})}" class="btn btn-warning btn-sm me-3">Edit</a>
+                            <a th:href="@{/delete/{id}(id=${task.taskId})}" class="btn btn-danger btn-sm me-3">Delete</a>
+                        </div>
+                    </td>
                 </tr>
                 </tbody>
         </table>

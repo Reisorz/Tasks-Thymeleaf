@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
-<head th:replace="~{fragments/head::head-section(title='Add task')}">
+<head th:replace="~{fragments/head::head-section(title='Edit task')}">
 </head>
 <body>
 
@@ -8,25 +8,26 @@
 
   <div class="container">
     <div class="text-center" style="margin: 30px">
-      <h3>Add task</h3>
+      <h3>Edit task</h3>
     </div>
     <div>
-      <form action="/add" modelAttribute="taskForm" method="post">
+      <form action="/edit" th:object="${task}" method="post">
+        <input type="hidden" th:field="*{taskId}"/>
         <div class="mb-3">
           <label for="taskName" class="form-label">Task</label>
-          <input type="text" class="form-control" id="taskName" required="true" name="taskName">
+          <input type="text" class="form-control" id="taskName" required="true" name="taskName" th:field="*{taskName}">
         </div>
         <div class="mb-3">
           <label for="responsiblePerson" class="form-label">Responsible person</label>
-          <input type="text" class="form-control" id="responsiblePerson" name="responsiblePerson">
+          <input type="text" class="form-control" id="responsiblePerson" name="responsiblePerson" th:field="*{responsiblePerson}">
         </div>
         <div class="mb-3">
           <label for="status" class="form-label">Status</label>
-          <input type="text" class="form-control" id="status" name="status">
+          <input type="text" class="form-control" id="status" name="status" th:field="*{status}">
         </div>
 
         <div class="text-center">
-          <button type="submit" class="btn btn-warning btn-sm me-3">Add task</button>
+          <button type="submit" class="btn btn-warning btn-sm me-3">Edit task</button>
           <a href="/" class="btn btn-danger btn-sm">Return</a>
         </div>
       </form>
